@@ -1,26 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>github-issue-tracker</title>
 
     <!-- Favicon -->
-     <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/github-logo.png"
+      type="image/x-icon"
+    />
 
     <!-- DaisyUI & Taiwind -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- google fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 class="bg-amber-400">hello</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="w-[400px] bg-base-200 border-2 shadow-gray-400 border-base-300 rounded-box mx-auto mt-20 p-6">
+      <div class="container mx-auto py-8">
+        <div class="flex justify-center mb-4">
+         <img src="./assets/github-logo.png" alt="">
+        </div>
+        <h1 class="text-2xl font-bold text-center mb-2">GitHub Issue Tracker</h1>
+        <p class="text-center ">Sign in to manage your issues</p>
+        </div>
+      </div>
 
+      <div class="flex justify-center space-y-2">
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full p-4 space-y-2">
+            <label class="font-semibold">Username</label>
+            <input id="input-username" type="Username" class="input" placeholder="Enter Username" />
+
+            <label class="font-semibold">Password</label>
+            <input id="input-password" type="password" class="input" placeholder="Enter Password" />
+
+            <button id="sign-in-btn" class="btn bg-[#4A00FF] text-white mt-4">Sign In</button>
+        </fieldset>
+        
+      </div>
+
+
+    </section>
     <!-- JS -->
-     <script src="./JS file/script.js"></script>
-</body>
+    <script src="./JS file/script.js"></script>
+  </body>
 </html>

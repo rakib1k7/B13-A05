@@ -1,4 +1,7 @@
 const LoadingSpinner = document.getElementById("LoadingSpinner");
+const allBtn = document.getElementById("all-btn");
+const openBtn = document.getElementById("open-btn");
+const closedBtn = document.getElementById("closed-btn");
 
 const loadCards = () => {
   LoadingSpinner.classList.remove("hidden");
@@ -40,5 +43,22 @@ const displayCards = (cards) => {
     cardsContainer.appendChild(cardDiv);
   }
 };
+
+document.getElementById("open-btn").addEventListener("click", () => {
+  fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+    .then((res) => res.json())
+    .then((data) => {
+      const openCards = data.data.filter((card) => card.status === "open");
+      displayCards(openCards);
+    } );
+});
+document.getElementById("closed-btn").addEventListener("click", () => {
+  fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+    .then((res) => res.json())
+    .then((data) => {
+      const closedCards = data.data.filter((card) => card.status === "closed");
+      displayCards(closedCards);
+    } );
+});
 
 loadCards();

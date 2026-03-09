@@ -35,7 +35,7 @@
     />
   </head>
   <body>
-    <header class="flex justify-between w-[1440px] mx-auto mt-3">
+    <header class="flex flex-col md:flex-row justify-between w-[1440px] mx-auto mt-3">
       <div class="flex items-center gap-1.5">
         <img class="w-8" src="./assets/github-logo.png" alt="" />
         <h1 class="font-bold text-2xl">GitHub Issue Tracker</h1>
@@ -61,7 +61,7 @@
       </div>
 
       <div
-        class="total-issue-section mt-5 flex items-center gap-2 justify-between shadow-gray-300 shadow-md rounded-box p-3"
+        class="total-issue-section mt-5 flex flex-col md:flex-row md:items-center gap-2 justify-between shadow-gray-300 shadow-md rounded-box p-3"
       >
         <div class="flex h-full items-center gap-2">
           <div>
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      <div id="card-container" class="grid sm:grid-cols-4 grid-cols-2 gap-4 mt-5 space-y-7">
+      <div id="card-container" class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 mt-5 space-y-7">
         <div  class="shadow-gray-300 shadow-md rounded-box p-3 ">
           <!-- Issues will be dynamically added here -->
            <div class="flex justify-between items-center">

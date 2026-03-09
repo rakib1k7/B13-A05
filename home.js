@@ -102,6 +102,7 @@ const displayCards = (cards) => {
 };
 
 document.getElementById("open-btn").addEventListener("click", () => {
+  
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
     .then((data) => {
@@ -117,6 +118,39 @@ document.getElementById("closed-btn").addEventListener("click", () => {
       displayCards(closedCards);
     });
 });
+
+document.getElementById("all-btn").addEventListener("click", () => {
+  fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+    .then((res) => res.json())
+    .then((data) => {
+      displayCards(data.data);
+    });
+});
+
+function toggleStyle(activeBtn) {
+  // const buttons = [allBtn, openBtn, closedBtn];
+  allBtn.classList.remove("btn-primary", "text-white");
+  openBtn.classList.remove("btn-primary", "text-white");
+  closedBtn.classList.remove("btn-primary", "text-white");
+
+  allBtn.classList.add("btn-ghost", "text-black-600");
+  openBtn.classList.add("btn-ghost", "text-black-600");
+  closedBtn.classList.add("btn-ghost", "text-black-600");
+
+  const selectedBtn = document.getElementById(activeBtn);
+  currentStatus = activeBtn;
+  selectedBtn.classList.remove("btn-ghost", "text-black-600");
+  selectedBtn.classList.add("btn-primary", "text-white");
+
+
+
+    // if (activeBtn === "allBtn") {
+    //   allBtn.classList.add("btn-primary", "text-white");
+
+    // } else {
+    //   btn.classList.remove("btn-primary", "text-white");
+    // }
+}
 
 loadCards();
 
